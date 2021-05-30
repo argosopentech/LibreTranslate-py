@@ -3,7 +3,7 @@ import sys
 from urllib import request, parse
 
 
-def translate(q, source="en", target="es", url="https://libretranslate.de/translate"):
+def translate(q, source="en", target="es", url="https://translate.astian.org/translate"):
     """Connect to LibreTranslate API
 
     Args:

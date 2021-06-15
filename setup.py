@@ -5,7 +5,7 @@ with open('README.md') as f:
 
 setup(
         name='libretranslatepy',
-        version='2.0',
+        version='2.1.0',
         description='Python bindings for LibreTranslate API',
         url='https://www.argosopentech.com',
         packages=find_packages()

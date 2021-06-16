@@ -1,5 +1,9 @@
 # LibreTranslate-py
-Python bindings for LibreTranslate
+
+<a href="https://pypi.org/project/libretranslatepy/" target="_blank"><img src="https://flat.badgen.net/pypi/v/libretranslatepy"></a>
+<a href="/LICENSE" target="_blank"><img src="https://flat.badgen.net/github/license/argosopentech/LibreTranslate-py"></a>
+
+Python bindings for <a href="https://github.com/LibreTranslate/LibreTranslate" target="_blank">LibreTranslate</a>
 
 ## Install
 ```
@@ -7,8 +11,9 @@ pip install libretranslatepy
 ```
 
 ## Example usage
-```
+```python
 from libretranslatepy import LibreTranslateAPI
+
 lt = LibreTranslateAPI("https://translate.astian.org/")
 print(lt.detect("Hello World"))
 print(lt.languages())
@@ -16,7 +21,7 @@ print(lt.translate("LibreTranslate is awesome!", "en", "es"))
 ```
 
 ## Source
-```
+```python
 import json
 import sys
 from urllib import request, parse

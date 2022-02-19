@@ -20,6 +20,12 @@ print(lt.languages())
 print(lt.translate("LibreTranslate is awesome!", "en", "es"))
 ```
 
+## [LibreTranslate Mirrors](https://github.com/LibreTranslate/LibreTranslate#mirrors)
+- [translate.argosopentech.com](translate.argosopentech.com)
+- [https://translate.api.skitzen.com/](https://translate.api.skitzen.com/)
+- [https://trans.zillyhuhn.com/](https://trans.zillyhuhn.com/)
+-[https://libretranslate.esmailelbob.xyz/](https://libretranslate.esmailelbob.xyz/)
+
 ## Source
 ```python
 import json

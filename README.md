@@ -24,7 +24,7 @@ print(lt.translate("LibreTranslate is awesome!", "en", "es"))
 - [translate.argosopentech.com](translate.argosopentech.com)
 - [https://translate.api.skitzen.com/](https://translate.api.skitzen.com/)
 - [https://trans.zillyhuhn.com/](https://trans.zillyhuhn.com/)
--[https://libretranslate.esmailelbob.xyz/](https://libretranslate.esmailelbob.xyz/)
+- [https://libretranslate.esmailelbob.xyz/](https://libretranslate.esmailelbob.xyz/)
 
 ## Source
 ```python

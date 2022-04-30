@@ -22,9 +22,8 @@ print(lt.translate("LibreTranslate is awesome!", "en", "es"))
 
 ## [LibreTranslate Mirrors](https://github.com/LibreTranslate/LibreTranslate#mirrors)
 - [translate.argosopentech.com](https://translate.argosopentech.com)
-- [translate.api.skitzen.com](https://translate.api.skitzen.com/)
-- [trans.zillyhuhn.com](https://trans.zillyhuhn.com/)
-- [libretranslate.esmailelbob.xyz](https://libretranslate.esmailelbob.xyz/)
+- [translate.fortytwo-it.com](https://translate.fortytwo-it.com/)
+- [translate.terraprint.co](https://translate.terraprint.co/)
 
 ## Source
 ```python

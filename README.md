@@ -52,8 +52,7 @@ class LibreTranslateAPI:
             url (str): The url of the LibreTranslate endpoint.
             api_key (str): The API key.
         """
-
-        self.url = DEFAULT_URL if url is None else url
+        self.url = LibreTranslateAPI.DEFAULT_URL if url is None else url
         self.api_key = api_key
 
         # Add trailing slash
@@ -71,22 +70,14 @@ class LibreTranslateAPI:
 
         Returns: The translated text
         """
-
         url = self.url + "translate"
-
         params = {"q": q, "source": source, "target": target}
-
         if self.api_key is not None:
             params["api_key"] = self.api_key
-
         url_params = parse.urlencode(params)
-
         req = request.Request(url, data=url_params.encode())
-
         response = request.urlopen(req)
-
         response_str = response.read().decode()
-
         return json.loads(response_str)["translatedText"]
 
     def languages(self):
@@ -94,22 +85,14 @@ class LibreTranslateAPI:
 
         Returns: A list of available languages ex. [{"code":"en", "name":"English"}]
         """
-
         url = self.url + "languages"
-
         params = dict()
-
         if self.api_key is not None:
             params["api_key"] = self.api_key
-
         url_params = parse.urlencode(params)
-
         req = request.Request(url, data=url_params.encode())
-
         response = request.urlopen(req)
-
         response_str = response.read().decode()
-
         return json.loads(response_str)
 
     def detect(self, q):
@@ -120,24 +103,15 @@ class LibreTranslateAPI:
 
         Returns: The detected languages ex. [{"confidence": 0.6, "language": "en"}]
         """
-
         url = self.url + "detect"
-
         params = {"q": q}
-
         if self.api_key is not None:
             params["api_key"] = self.api_key
-
         url_params = parse.urlencode(params)
-
         req = request.Request(url, data=url_params.encode())
-
         response = request.urlopen(req)
-
         response_str = response.read().decode()
-
         return json.loads(response_str)
-
 
 ```
 

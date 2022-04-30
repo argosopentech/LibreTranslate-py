@@ -35,7 +35,8 @@ class LibreTranslateAPI:
     """Connect to the LibreTranslate API"""
 
     """Example usage:
-    from argostranslate.apis import LibreTranslateAPI
+    from libretranslatepy import LibreTranslateAPI
+
     lt = LibreTranslateAPI("https://translate.argosopentech.com/")
     print(lt.detect("Hello World"))
     print(lt.languages())

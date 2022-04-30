@@ -14,7 +14,7 @@ pip install libretranslatepy
 ```python
 from libretranslatepy import LibreTranslateAPI
 
-lt = LibreTranslateAPI("https://translate.argosopentech.org/")
+lt = LibreTranslateAPI("https://translate.argosopentech.com/")
 print(lt.detect("Hello World"))
 print(lt.languages())
 print(lt.translate("LibreTranslate is awesome!", "en", "es"))
@@ -37,13 +37,13 @@ class LibreTranslateAPI:
 
     """Example usage:
     from argostranslate.apis import LibreTranslateAPI
-    lt = LibreTranslateAPI("https://translate.argosopentech.org/")
+    lt = LibreTranslateAPI("https://translate.argosopentech.com/")
     print(lt.detect("Hello World"))
     print(lt.languages())
     print(lt.translate("LibreTranslate is awesome!", "en", "es"))
     """
 
-    DEFAULT_URL = "https://translate.argosopentech.org/"
+    DEFAULT_URL = "https://translate.argosopentech.com/"
 
     def __init__(self, url=None, api_key=None):
         """Create a LibreTranslate API connection.

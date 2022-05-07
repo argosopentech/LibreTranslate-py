@@ -2,6 +2,7 @@ import json
 import sys
 from urllib import request, parse
 
+
 class LibreTranslateAPI:
     """Connect to the LibreTranslate API"""
 
@@ -9,9 +10,15 @@ class LibreTranslateAPI:
     from libretranslatepy import LibreTranslateAPI
 
     lt = LibreTranslateAPI("https://translate.argosopentech.com/")
+
     print(lt.detect("Hello World"))
+    # [{"confidence": 0.6, "language": "en"}]
+    
     print(lt.languages())
+    # [{"code":"en", "name":"English"}]
+
     print(lt.translate("LibreTranslate is awesome!", "en", "es"))
+    # LibreTranslate es impresionante!
     """
 
     DEFAULT_URL = "https://translate.argosopentech.com/"
@@ -39,7 +46,8 @@ class LibreTranslateAPI:
             source (str): The source language code (ISO 639)
             target (str): The target language code (ISO 639)
 
-        Returns: The translated text
+        Returns:
+            str: The translated text
         """
         url = self.url + "translate"
         params = {"q": q, "source": source, "target": target}
@@ -54,7 +62,8 @@ class LibreTranslateAPI:
     def languages(self):
         """Retrieve list of supported languages.
 
-        Returns: A list of available languages ex. [{"code":"en", "name":"English"}]
+        Returns:
+            A list of available languages ex: [{"code":"en", "name":"English"}]
         """
         url = self.url + "languages"
         params = dict()
@@ -72,7 +81,8 @@ class LibreTranslateAPI:
         Args:
             q (str): Text to detect
 
-        Returns: The detected languages ex. [{"confidence": 0.6, "language": "en"}]
+        Returns:
+            The detected languages ex: [{"confidence": 0.6, "language": "en"}]
         """
         url = self.url + "detect"
         params = {"q": q}

@@ -29,8 +29,6 @@ pip install libretranslatepy
 
 ## [LibreTranslate Mirrors](https://github.com/LibreTranslate/LibreTranslate#mirrors)
 - [translate.argosopentech.com](https://translate.argosopentech.com)
-- [translate.fortytwo-it.com](https://translate.fortytwo-it.com/)
-- [translate.terraprint.co](https://translate.terraprint.co/)
 
 ## Source
 ```python

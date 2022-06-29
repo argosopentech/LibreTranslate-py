@@ -70,7 +70,10 @@ class LibreTranslateAPI:
         if self.api_key is not None:
             params["api_key"] = self.api_key
         url_params = parse.urlencode(params)
-        req = request.Request(url, data=url_params.encode())
+        # Setting method type to GET as required for the libretranslate api to accept it.
+        # Otherwise, the default will be POST since we do set the data parameter which is
+        # otherwise only used for POST calls.
+        req = request.Request(url, data=url_params.encode(), method='GET')
         response = request.urlopen(req)
         response_str = response.read().decode()
         return json.loads(response_str)

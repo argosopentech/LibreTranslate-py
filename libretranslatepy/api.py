@@ -11,14 +11,14 @@ class LibreTranslateAPI:
 
     lt = LibreTranslateAPI("https://translate.argosopentech.com/")
 
+    print(lt.translate("LibreTranslate is awesome!", "en", "es"))
+    # LibreTranslate es impresionante!
+
     print(lt.detect("Hello World"))
     # [{"confidence": 0.6, "language": "en"}]
     
     print(lt.languages())
     # [{"code":"en", "name":"English"}]
-
-    print(lt.translate("LibreTranslate is awesome!", "en", "es"))
-    # LibreTranslate es impresionante!
     """
 
     DEFAULT_URL = "https://translate.argosopentech.com/"
@@ -59,22 +59,6 @@ class LibreTranslateAPI:
         response_str = response.read().decode()
         return json.loads(response_str)["translatedText"]
 
-    def languages(self):
-        """Retrieve list of supported languages.
-
-        Returns:
-            A list of available languages ex: [{"code":"en", "name":"English"}]
-        """
-        url = self.url + "languages"
-        params = dict()
-        if self.api_key is not None:
-            params["api_key"] = self.api_key
-        url_params = parse.urlencode(params)
-        req = request.Request(url, data=url_params.encode(), method="GET")
-        response = request.urlopen(req)
-        response_str = response.read().decode()
-        return json.loads(response_str)
-
     def detect(self, q):
         """Detect the language of a single text.
 
@@ -90,6 +74,22 @@ class LibreTranslateAPI:
             params["api_key"] = self.api_key
         url_params = parse.urlencode(params)
         req = request.Request(url, data=url_params.encode())
+        response = request.urlopen(req)
+        response_str = response.read().decode()
+        return json.loads(response_str)
+
+    def languages(self):
+        """Retrieve list of supported languages.
+
+        Returns:
+            A list of available languages ex: [{"code":"en", "name":"English"}]
+        """
+        url = self.url + "languages"
+        params = dict()
+        if self.api_key is not None:
+            params["api_key"] = self.api_key
+        url_params = parse.urlencode(params)
+        req = request.Request(url, data=url_params.encode(), method="GET")
         response = request.urlopen(req)
         response_str = response.read().decode()
         return json.loads(response_str)

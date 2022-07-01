@@ -13,18 +13,18 @@ pip install libretranslatepy
 
 ## Example usage
 ```python
-    from libretranslatepy import LibreTranslateAPI
+from libretranslatepy import LibreTranslateAPI
 
-    lt = LibreTranslateAPI("https://translate.argosopentech.com/")
+lt = LibreTranslateAPI("https://translate.argosopentech.com/")
 
-    print(lt.detect("Hello World"))
-    # [{"confidence": 0.6, "language": "en"}]
+print(lt.detect("Hello World"))
+# [{"confidence": 0.6, "language": "en"}]
     
-    print(lt.languages())
-    # [{"code":"en", "name":"English"}]
+print(lt.languages())
+# [{"code":"en", "name":"English"}]
 
-    print(lt.translate("LibreTranslate is awesome!", "en", "es"))
-    # LibreTranslate es impresionante!
+print(lt.translate("LibreTranslate is awesome!", "en", "es"))
+# LibreTranslate es impresionante!
 ```
 
 ## [LibreTranslate Mirrors](https://github.com/LibreTranslate/LibreTranslate#mirrors)
@@ -35,6 +35,7 @@ pip install libretranslatepy
 import json
 import sys
 from urllib import request, parse
+
 
 class LibreTranslateAPI:
     """Connect to the LibreTranslate API"""
@@ -103,7 +104,7 @@ class LibreTranslateAPI:
         if self.api_key is not None:
             params["api_key"] = self.api_key
         url_params = parse.urlencode(params)
-        req = request.Request(url, data=url_params.encode())
+        req = request.Request(url, data=url_params.encode(), method="GET")
         response = request.urlopen(req)
         response_str = response.read().decode()
         return json.loads(response_str)
@@ -126,7 +127,6 @@ class LibreTranslateAPI:
         response = request.urlopen(req)
         response_str = response.read().decode()
         return json.loads(response_str)
-
 ```
 
 ## License

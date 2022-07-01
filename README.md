@@ -131,5 +131,5 @@ class LibreTranslateAPI:
 ```
 
 ## License
-Dual licensed under either the MIT License or Creative Commons CC0.
+Licensed under either the MIT License or Creative Commons CC0.
 

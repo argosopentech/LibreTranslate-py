@@ -1,7 +1,7 @@
 from setuptools import find_packages, setup
 
 setup(name='libretranslatepy',
-      version='2.1.2',
+      version='2.1.3',
       description='Python bindings for LibreTranslate API',
       keywords="translation libretranslate",
       url='https://github.com/argosopentech/LibreTranslate-py',

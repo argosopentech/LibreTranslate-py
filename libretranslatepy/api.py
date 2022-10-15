@@ -1,5 +1,6 @@
 import json
 import sys
+from typing import Any, Dict
 from urllib import request, parse
 
 
@@ -23,7 +24,7 @@ class LibreTranslateAPI:
 
     DEFAULT_URL = "https://translate.argosopentech.com/"
 
-    def __init__(self, url=None, api_key=None):
+    def __init__(self, url: str = None, api_key: str = None):
         """Create a LibreTranslate API connection.
 
         Args:
@@ -38,7 +39,7 @@ class LibreTranslateAPI:
         if self.url[-1] != "/":
             self.url += "/"
 
-    def translate(self, q, source="en", target="es"):
+    def translate(self, q: str, source: str = "en", target: str = "es") -> Any:
         """Translate string
 
         Args:
@@ -50,7 +51,7 @@ class LibreTranslateAPI:
             str: The translated text
         """
         url = self.url + "translate"
-        params = {"q": q, "source": source, "target": target}
+        params: Dict[str, str] = {"q": q, "source": source, "target": target}
         if self.api_key is not None:
             params["api_key"] = self.api_key
         url_params = parse.urlencode(params)
@@ -59,7 +60,7 @@ class LibreTranslateAPI:
         response_str = response.read().decode()
         return json.loads(response_str)["translatedText"]
 
-    def detect(self, q):
+    def detect(self, q: str) -> Any:
         """Detect the language of a single text.
 
         Args:
@@ -69,7 +70,7 @@ class LibreTranslateAPI:
             The detected languages ex: [{"confidence": 0.6, "language": "en"}]
         """
         url = self.url + "detect"
-        params = {"q": q}
+        params: Dict[str, str] = {"q": q}
         if self.api_key is not None:
             params["api_key"] = self.api_key
         url_params = parse.urlencode(params)
@@ -78,14 +79,14 @@ class LibreTranslateAPI:
         response_str = response.read().decode()
         return json.loads(response_str)
 
-    def languages(self):
+    def languages(self) -> Any:
         """Retrieve list of supported languages.
 
         Returns:
             A list of available languages ex: [{"code":"en", "name":"English"}]
         """
         url = self.url + "languages"
-        params = dict()
+        params: Dict[str, str] = dict()
         if self.api_key is not None:
             params["api_key"] = self.api_key
         url_params = parse.urlencode(params)

@@ -24,7 +24,7 @@ class LibreTranslateAPI:
 
     DEFAULT_URL = "https://translate.argosopentech.com/"
 
-    def __init__(self, url: str = None, api_key: str = None):
+    def __init__(self, url: str | None = None, api_key: str | None = None):
         """Create a LibreTranslate API connection.
 
         Args:

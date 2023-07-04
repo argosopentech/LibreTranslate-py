@@ -39,13 +39,14 @@ class LibreTranslateAPI:
         if self.url[-1] != "/":
             self.url += "/"
 
-    def translate(self, q: str, source: str = "en", target: str = "es") -> Any:
+    def translate(self, q: str, source: str = "en", target: str = "es", timeout: int | None = None) -> Any:
         """Translate string
 
         Args:
             q (str): The text to translate
             source (str): The source language code (ISO 639)
             target (str): The target language code (ISO 639)
+            timeout (int): Request timeout in seconds
 
         Returns:
             str: The translated text
@@ -56,15 +57,16 @@ class LibreTranslateAPI:
             params["api_key"] = self.api_key
         url_params = parse.urlencode(params)
         req = request.Request(url, data=url_params.encode())
-        response = request.urlopen(req)
+        response = request.urlopen(req, timeout = timeout)
         response_str = response.read().decode()
         return json.loads(response_str)["translatedText"]
 
-    def detect(self, q: str) -> Any:
+    def detect(self, q: str, timeout: int | None = None) -> Any:
         """Detect the language of a single text.
 
         Args:
             q (str): Text to detect
+            timeout (int): Request timeout in seconds
 
         Returns:
             The detected languages ex: [{"confidence": 0.6, "language": "en"}]
@@ -75,12 +77,15 @@ class LibreTranslateAPI:
             params["api_key"] = self.api_key
         url_params = parse.urlencode(params)
         req = request.Request(url, data=url_params.encode())
-        response = request.urlopen(req)
+        response = request.urlopen(req, timeout = timeout)
         response_str = response.read().decode()
         return json.loads(response_str)
 
-    def languages(self) -> Any:
+    def languages(self, timeout: int | None = None) -> Any:
         """Retrieve list of supported languages.
+
+        Args:
+            timeout (int): Request timeout in seconds
 
         Returns:
             A list of available languages ex: [{"code":"en", "name":"English"}]
@@ -91,6 +96,6 @@ class LibreTranslateAPI:
             params["api_key"] = self.api_key
         url_params = parse.urlencode(params)
         req = request.Request(url, data=url_params.encode(), method="GET")
-        response = request.urlopen(req)
+        response = request.urlopen(req, timeout = timeout)
         response_str = response.read().decode()
         return json.loads(response_str)

@@ -29,6 +29,7 @@ print(lt.languages())
 
 ## [LibreTranslate Mirrors](https://github.com/LibreTranslate/LibreTranslate#mirrors)
 - [translate.argosopentech.com](https://translate.argosopentech.com)
+- [translate.terraprint.co](https://translate.terraprint.co)
 
 ## Source
 ```python

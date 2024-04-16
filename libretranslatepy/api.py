@@ -10,7 +10,7 @@ class LibreTranslateAPI:
     """Example usage:
     from libretranslatepy import LibreTranslateAPI
 
-    lt = LibreTranslateAPI("https://translate.argosopentech.com/")
+    lt = LibreTranslateAPI("https://translate.terraprint.co/")
 
     print(lt.translate("LibreTranslate is awesome!", "en", "es"))
     # LibreTranslate es impresionante!
@@ -22,7 +22,7 @@ class LibreTranslateAPI:
     # [{"code":"en", "name":"English"}]
     """
 
-    DEFAULT_URL = "https://translate.argosopentech.com/"
+    DEFAULT_URL = "https://translate.terraprint.co/"
 
     def __init__(self, url: str | None = None, api_key: str | None = None):
         """Create a LibreTranslate API connection.

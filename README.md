@@ -58,7 +58,7 @@ class LibreTranslateAPI:
     # [{"code":"en", "name":"English"}]
     """
 
-    DEFAULT_URL = "https://translate.argosopentech.com/"
+    DEFAULT_URL = "https://translate.terraprint.co/"
 
     def __init__(self, url=None, api_key=None):
         """Create a LibreTranslate API connection.

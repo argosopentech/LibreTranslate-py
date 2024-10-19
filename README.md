@@ -28,10 +28,6 @@ print(lt.languages())
 ```
 
 ## [LibreTranslate Mirrors](https://github.com/LibreTranslate/LibreTranslate#mirrors)
-- [translate.terraprint.co](https://translate.terraprint.co)
-*translate.argosopentech.com is no longer active*
-
-If you [buy a LibreTranslate API key](https://portal.libretranslate.com/) from the [LibreTranslate project](https://libretranslate.com) you get access to a fast cloud hosted service, email support, and financially support the LibreTranslate devs ❤️.
 
 ## Source
 ```python

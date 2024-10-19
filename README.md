@@ -132,3 +132,4 @@ class LibreTranslateAPI:
 ## License
 Licensed under either the MIT License or Public Domain
 
+Developed by P.J. Finlay

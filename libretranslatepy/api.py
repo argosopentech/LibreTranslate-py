@@ -39,20 +39,21 @@ class LibreTranslateAPI:
         if self.url[-1] != "/":
             self.url += "/"
 
-    def translate(self, q: str, source: str = "en", target: str = "es", timeout: int | None = None) -> Any:
+    def translate(self, q: str, source: str = "en", target: str = "es", format="text", timeout: int | None = None) -> Any:
         """Translate string
 
         Args:
             q (str): The text to translate
             source (str): The source language code (ISO 639)
             target (str): The target language code (ISO 639)
+            format (str): The format of the text (plain or html)
             timeout (int): Request timeout in seconds
 
         Returns:
             str: The translated text
         """
         url = self.url + "translate"
-        params: Dict[str, str] = {"q": q, "source": source, "target": target}
+        params: Dict[str, str] = {"q": q, "source": source, "target": target, "format": format}
         if self.api_key is not None:
             params["api_key"] = self.api_key
         url_params = parse.urlencode(params)

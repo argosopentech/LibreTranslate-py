@@ -13,7 +13,7 @@ pip install libretranslatepy
 ```python
 from libretranslatepy import LibreTranslateAPI
 
-lt = LibreTranslateAPI("https://translate.terraprint.co/")
+lt = LibreTranslateAPI("https://libretranslate.com/")
 
 print(lt.translate("LibreTranslate is awesome!", "en", "es"))
 # LibreTranslate es impresionante!

@@ -1,10 +1,8 @@
 # LibreTranslate-py
 
-<a href="https://pypi.org/project/libretranslatepy/" target="_blank"><img src="https://flat.badgen.net/pypi/v/libretranslatepy"></a>
-<a href="/LICENSE" target="_blank"><img src="https://flat.badgen.net/github/license/argosopentech/LibreTranslate-py"></a>
-
 Python bindings to connect to a [LibreTranslate API](https://github.com/LibreTranslate/LibreTranslate)
 
+https://pypi.org/project/libretranslatepy/
 
 ## Install
 ```

@@ -22,7 +22,7 @@ print(lt.detect("Hello World"))
 # [{"confidence": 0.6, "language": "en"}]
 
 print(lt.languages())
-# [{"code":"en", "name":"English"}]
+# [{"code":"en", "name":"English"}, {"code":"es", "name":"Spanish"}]
 ```
 
 ## [LibreTranslate Mirrors](https://github.com/LibreTranslate/LibreTranslate#mirrors)
